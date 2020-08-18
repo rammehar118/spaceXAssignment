@@ -1,0 +1,32 @@
+.filter-span{
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #c9ff94;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.filter-text{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    
+
+}
+.program-detail-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #764c9c;
+}
+.program-detail{
+    font-weight: bold;
+    font-size: 18px;
+}
+.program-detail-value{
+    font-weight: bold;
+    font-size: 14px;
+    color: #764c9c;
+    margin-left: 5px;
+}

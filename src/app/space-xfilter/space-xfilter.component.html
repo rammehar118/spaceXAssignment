@@ -1,0 +1,86 @@
+<div *ngIf="spaceXFilterProgrammes.length > 0" style="background-color: #f9f8f8;">
+  <h2>SpaceX Launch Programs</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-2" style="background-color: #fff;">       
+     <h4 >Filters</h4>
+     <!-- <div class="row"> -->
+       <div class="filter-text">
+         Launch Year
+       </div>
+      <div class="col-xs-6 col-sm-6 col-lg-1" *ngFor="let item of filterYears" (click)="selectedFilter(item.yearValue)" style="background-color: #fff;">       
+       <span class="filter-span">{{item.yearValue}}</span> 
+      </div>
+    <!-- </div> -->
+    <div  class="filter-text">
+      <div style="padding: 10px;">Successful Launch</div>
+     
+     <div>
+          <span class="filter-span" (click)="selectLaunch('success_launch_true')">True</span ><span class="filter-span" (click)="selectLaunch('success_launch_false')">false</span>
+     </div>
+    </div>
+    <div class="filter-text">
+     <div style="padding: 10px;">Successful Landing</div> 
+      <div>
+           <span class="filter-span" (click)="selectLanding('success_landing_true')">True</span><span class="filter-span" (click)="selectLanding('success_landing_false')">false</span>
+      </div>
+     </div>
+     
+    </div>  
+    <div  class="col-xs-12 col-sm-12 col-lg-10">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 col-lg-3"  *ngFor="let item of spaceXFilterProgrammes"
+         style="background-color: #ffffff;
+        margin: 15px;
+        padding: 15px;">  
+          <div style=" background-color: #d3d3d3;">            
+            <img style="margin-left: 18%;" src= "{{item.links.mission_patch}}" alt="" width="200" height="110">
+          </div>     
+          <div style="margin: 10px;"><span class="program-detail-name"><a href="{{item.links.article_link}}"></a>{{item.mission_name}}</span></div> 
+          <div *ngIf="item.mission_id.length > 0">
+            <span style="font-weight: bold; margin-left: 10px;font-size: 18px;"> Mission IDs: </span>
+            <span style="display: block;margin-left: 10px;" class="program-detail-value" *ngFor="let id of item.mission_id">
+              {{id}}
+            </span>
+          </div>
+          <div style="margin: 10px;"><span class="program-detail">Launch Year:</span><span class="program-detail-value">{{item.launch_year}}</span></div>
+          <div style="margin: 10px;"><span class="program-detail">Successful Launch:</span><span class="program-detail-value">{{item.launch_success}}</span></div>
+          <div style="margin: 10px;"><span class="program-detail">Successful Landing:</span><span class="program-detail-value">{{item.launch_success}}</span></div>
+        </div>
+      </div>    
+    </div>
+  </div>  
+
+</div>
+<div *ngIf="spaceXFilterProgrammes.length == 0" style="text-align: center;">
+ No Data Found With Applied filters.
+</div>
+
+  <!-- crew: null
+  details: "Engine failure at 33 seconds and loss of vehicle"
+  flight_number: 1
+  is_tentative: false
+  launch_date_local: "2006-03-25T10:30:00+12:00"
+  launch_date_unix: 1143239400
+  launch_date_utc: "2006-03-24T22:30:00.000Z"
+  launch_failure_details: {time: 33, altitude: null, reason: "merlin engine failure"}
+  launch_site: {site_id: "kwajalein_atoll", site_name: "Kwajalein Atoll",…}
+  launch_success: false
+  launch_window: 0
+  launch_year: "2006"
+  links: {mission_patch: "https://images2.imgbox.com/40/e3/GypSkayF_o.png",…}
+  links: {mission_patch: "https://images2.imgbox.com/40/e3/GypSkayF_o.png",…}
+      article_link: "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html"
+      flickr_images: []
+      mission_patch: "https://images2.imgbox.com/40/e3/GypSkayF_o.png"
+      mission_patch_small: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png"
+  mission_id: []
+  mission_name: "FalconSat"
+  rocket: {rocket_id: "falcon1", rocket_name: "Falcon 1", rocket_type: "Merlin A", first_stage: {,…},…}
+  ships: []
+  static_fire_date_unix: 1142553600
+  static_fire_date_utc: "2006-03-17T00:00:00.000Z"
+  tbd: false
+  telemetry: {flight_club: null}
+  tentative_max_precision: "hour"
+  timeline: {webcast_liftoff: 54}
+  upcoming: false -->
